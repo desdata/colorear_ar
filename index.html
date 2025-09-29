@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AR con hoja personalizada</title>
+    <title>Banco de peces en AR</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.min.js"></script>
     <style>
@@ -10,13 +10,45 @@
   </head>
   <body>
     <a-scene embedded arjs>
+      <!-- marcador personalizado -->
       <a-marker type="pattern" url="https://raw.githubusercontent.com/desdata/colorear_ar/main/ProvaPlaya.patt">
+
+        <!-- Pez 1 -->
         <a-entity 
-          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/AnimatedFish/glTF/AnimatedFish.gltf"
+          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Goldfish/glTF/Goldfish.gltf"
           scale="0.05 0.05 0.05"
-          animation-mixer
-          position="0 0 0">
+          position="0 0 0"
+          animation="property: position; to: 0 0.2 0; dir: alternate; dur: 1000; loop: true"
+          animation__2="property: rotation; to: 0 20 0; dir: alternate; dur: 800; loop: true">
         </a-entity>
+
+        <!-- Pez 2 -->
+        <a-entity 
+          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Goldfish/glTF/Goldfish.gltf"
+          scale="0.04 0.04 0.04"
+          position="0.3 0.1 0"
+          animation="property: position; to: 0.3 0.3 0; dir: alternate; dur: 1200; loop: true"
+          animation__2="property: rotation; to: 0 -20 0; dir: alternate; dur: 900; loop: true">
+        </a-entity>
+
+        <!-- Pez 3 -->
+        <a-entity 
+          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Goldfish/glTF/Goldfish.gltf"
+          scale="0.03 0.03 0.03"
+          position="-0.3 0.05 0"
+          animation="property: position; to: -0.3 0.25 0; dir: alternate; dur: 800; loop: true"
+          animation__2="property: rotation; to: 0 30 0; dir: alternate; dur: 700; loop: true">
+        </a-entity>
+
+        <!-- Pez 4 -->
+        <a-entity 
+          gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/Goldfish/glTF/Goldfish.gltf"
+          scale="0.06 0.06 0.06"
+          position="0 0.15 -0.2"
+          animation="property: position; to: 0 0.25 -0.2; dir: alternate; dur: 1500; loop: true"
+          animation__2="property: rotation; to: 0 -15 0; dir: alternate; dur: 1000; loop: true">
+        </a-entity>
+
       </a-marker>
 
       <a-entity camera></a-entity>
